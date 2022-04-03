@@ -34,9 +34,15 @@ config = ConnectionConfig(
 
 
 def send_email_in_background(background: BackgroundTasks, subject: str, email_to: EmailStr, body: dict):
-
+    template =f"""
+    <html>
+    <body>
+    <h1 style="color:red;">hi</h1>
+    </body>
+    </html>
+"""
     message = MessageSchema(
-        subject=subject,
+        subject="EasyShop Verification Main",
         recipients=[email_to],
         body=template,
         subtype='html'
